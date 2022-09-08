@@ -1,0 +1,21 @@
+#main-canvas {
+    background-image: url('../assets/img/kitchen-tile.png');
+    background-repeat: repeat;
+}
+
+#inventory {
+    background-color:beige;
+    width: 290px;
+    height: 150px;
+    top: 0px;
+    left: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#inventory-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 10px;
+}

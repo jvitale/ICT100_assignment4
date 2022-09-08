@@ -1,0 +1,112 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+code-function {
+    color: #c1d9fc;
+    background-color:#0a234e;
+    font-weight:bold;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code-argument {
+    color:#f6c797;
+    background-color: #0a234e;
+    font-weight: bold;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code-variable {
+    color:#f1a2a6;
+    background-color: #0a234e;
+    font-weight: bold;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code-string {
+    color:#c5dea8;
+    background-color: #0a234e;
+    font-weight: bold;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code-punctuation {
+    color:white;
+    background-color: #0a234e;
+    font-weight: bold;
+    padding: 3px;
+    padding-left:0px;
+    padding-right: 0px;
+    margin-right:-3px;
+    margin-left:-3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code-parentheses {
+    color:#f1a2a6;
+    background-color: #0a234e;
+    font-weight: bold;
+    padding: 3px;
+    padding-left:0px;
+    padding-right: 0px;
+    margin-right:-3px;
+    margin-left:-3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code-equal {
+    color:#b1fcfe;
+    background-color: #0a234e;
+    font-weight: bold;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code-keyword {
+    color:#c4a7e2;
+    background-color: #0a234e;
+    font-weight: bold;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+file-ref {
+    color:brown;
+    font-weight: bold;
+}
+
+text-button {
+    color: black;
+    background-color: rgb(202, 202, 202);
+    border: 1px solid;
+    padding: 3px;
+}
+
+table {
+    width: 50%;
+}
+
+td {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+tr:first-child {
+    font-size: larger;
+    font-weight: bold;
+    background-color: lightgray;
+  }
+
+h4 {
+    margin-bottom: 0px;
+}
+
+.note {
+    color: red;
+}

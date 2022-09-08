@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/instructions.css">
+    <title>Task 2 Instructions</title>
+</head>
+<body>
+    <h1>Instructions</h1>
+    <p>This is an ECMAScript (JavaScript) programming assignment. Particularly, this task will assess your skills to:
+    <ul>
+        <li>Correctly acquire and release resources in a non-sequential programming paradigm to prevent deadlocks;</li>
+        <li>Correctly use async JavaScript functions;</li>
+        <li>Correctly use try-catch-finally blocks.</li>
+    </ul>
+    </p>
+    <p>
+        Your task is to write code for the robots working as waiters at the restaurant.<br/>
+        These robots can teleport to each restaurant's table. The teleportation process takes some random time and there can only be a maximum of one single robot attending a restaurant's table (otherwise the game will throw an error).
+        There are three possible scenarios a robot waiter can encounter while teleporting to a table:
+        <ol>
+            <li>The destination table is not attended by any other robot. In that case the robot can safely teleport to destination without any additional action required;</li>
+            <li>The destination table is currently attended by another robot but this 'misplaced' robot has not been acquired by any other process. In that case, the 'misplaced' robot can be acquired and immediately teleported away before moving the target robot to destination;</li>
+            <li>The destination table is currently attended by another 'misplaced' robot that has been already acquired and performing an action for some random amount of time. In that case, the 'misplaced' robot must be acquired (waiting for it to be released) and then teleported away before moving the target robot to destination.</li>
+        </ol>
+        The simulation for this task will test all these three possible scenarios in sequence. For each subtask, a random robot (target robot) and a random table (destination) will be chosen.
+    </p>
+    <h2>How to complete the task</h2>
+    <p>
+        To complete this task, you must write the code for your solution in the function <code-function>safeTeleportTo</code-function> that you can find in the file <a href="../solution/task2.js" target="_blank"><file-ref>solution/task2.js</file-ref></a>.<br />
+        This function has two input arguments: <code-argument>robotID</code-argument> and <code-argument>tableID</code-argument>.<br />
+        The argument <code-argument>robotID</code-argument> stores a string with the ID of the target robot to teleport at destination (the ID is either 'green', 'pink', 'yellow' or 'blue'). <br />
+        The argument <code-argument>tableID</code-argument> stores a string with the ID of the destination table where to teleport the robot (the tableID is either 'table-1', 'table-2', ..., 'table-8'). <br />
+        This function must teleport the robot with ID <code-argument>robotID</code-argument> at the table with ID <code-argument>tableID</code-argument> and it must to do so while preventing to cause conflicts or deadlock situations.<br />
+        For such reason, you will need to use methods to acquire and release the robots and try-catch-finally blocks.<br />
+        If you need, you can write additional code outside the function <code-function>safeTeleportTo</code-function> (for example for global variables or functions). However, you must write this code in the file <file-ref>solution/task2.js</file-ref>.
+    </p>
+    <h3>How to control the robot waiters (game methods)</h3>
+    To write the code for your solution you can use any available JavaScript function. <br />
+    However, to control the robots (and access some information about the current state of the game) you will need to use methods accessible from the global variable <code-variable>restaurantController</code-variable>. The methods can be accessed with dot notation.<br />
+    Below is a list of links to JavaScript files with sample code (and instructions) that you can copy and paste in the <code-function>safeTeleportTo</code-function> function to understand how the different methods work.
+    <h4>Sample code</h4>
+    <ul>
+        <li>Inspecting the function's parameters: <a href="task2-examples/inspecting-function-parameters.js" target="_blank">sample code</a></li>
+        <li>Teleporting a robot: <a href="task2-examples/teleport-robot.js" target="_blank">sample code</a></li>
+        <li>Acquiring/releasing a robot in a try-catch-finally statement: <a href="task2-examples/acquisition-release.js" target="_blank">sample code</a></li>
+    </ul>
+    <h2>How to test your solution</h2>
+    <p>
+        To test your solution, after you write code in the function <code-function>safeTeleportTo</code-function> in the file <file-ref>solution/task2.js</file-ref>, save the file, open the file <file-ref><a href="../index.html" target="_target">index.html</a></file-ref>, click on Task 2 in the Task Menu (on the left), and click the button <text-button>Run simulation</text-button> in the Control panel.<br />
+        This will invoke the function <code-function>safeTeleportTo</code-function> 3 times. Each iteration will call the function with a different random scenario as per the scenarios 1-3 listed in the instructions above.<br />
+        In the right Log panel you will be able to see if the code you wrote in the <code-function>safeTeleportTo</code-function> successfully teleported the target robot at destination. Successful attempts will be marked in green, whereas incorrect attempts will be marked in red.<br />
+        At the end of the simulation, the left Control panel will display your current success rate.
+    </p>
+    <h2>Logging</h2>
+    <p>
+        If you want to log messages you can use the JavaScript <code-variable>console</code-variable><code-punctuation>.</code-punctuation><code-function>log</code-function> method to log messages in the browser's debug console or you can use the global function <code-function>log</code-function> provided for you to log your text message in the right Log console panel of the game interface. <br />
+        For example, if you want to log the string <code-string>'Hello world'</code-string> in the Log panel with the global function <code-function>log</code-function> you can write in your code:<br />
+        <code-function>log</code-function><code-parentheses>(</code-parentheses><code-string>'Hello world'</code-string><code-parentheses>)</code-parentheses><br />
+        If you want to log the string <code-string>'Hello world'</code-string> in the browser's debug console instead, you can write in your code:<br />
+        <code-variable>console</code-variable><code-punctuation>.</code-punctuation><code-function>log</code-function><code-parentheses>(</code-parentheses><code-string>'Hello world'</code-string><code-parentheses>)</code-parentheses>
+    </p>
+    <h2>Hints</h2>
+    <p>
+        Try to start with a simple code that can just teleport the target robot to the destination table. This simple solution will only require you to write a single line of code in the <code-function>safeTeleportTo</code-function> function and it will let you succeed the first subtask.<br />
+        Then, try to figure out how to acquire and release the robot and how to do so safely by wrapping your code in a try-catch-finally block.<br />
+        Write the rest of the code step by step to acquire any 'misplaced' robot and move it away to some unattended table. Remember to release it once you are done!<br />
+        Although it is possible to solve this task without a recursive call to the function <code-function>safeTeleportTo</code-function>, it may be a good idea to do so to reduce the complexity of your code.
+        However, if you use recursion, make sure you do not acquire the target robot twice or you will end up with a deadlock!
+    </p>
+    <h2>Marking criteria:</h2>
+    <table>
+        <tr>
+            <td>Category</td>
+            <td>Weighting</td>
+            <td colspan="2">Result</td>
+        </tr>
+        <tr>
+            <td>Teleportation success rate</td>
+            <td>2.75 marks</td>
+            <td colspan="2">The final mark for this category is computed using the following formula:<br /> <b>2.75 * (success rate / 100)</b></td>
+        </tr>
+        <tr>
+            <td>Quality of the code</td>
+            <td>0.5 marks</td>
+            <td><b>0 marks</b>. The success rate is below 60&percnt; or the code does not use try-catch-finally blocks correctly.</td>
+            <td><b>0.5 marks</b>. The success rate is above 60&percnt; and the code makes a correct use of try-catch-finally blocks when acquiring / releasing the robots.</td>
+        </tr>
+    </table>
+</body>
+</html>

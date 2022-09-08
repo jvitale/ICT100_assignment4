@@ -1,0 +1,241 @@
+.bot {
+    background-image: url("../assets/img/bot.png");
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+}
+
+.bot-chef {
+    background-image: url("../assets/img/bot.png");
+    width: 45px;
+    height: 45px;
+    z-index: 10;
+}
+
+.roboceptionist {
+    background-image: url("../assets/img/roboceptionist.png");
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+}
+
+.balloon {
+    background-image: url("../assets/img/text-balloon.png");
+    width: 150px;
+    max-width: 150px;
+    height: 80px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 15px;
+    top: -30px;
+    left: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.table {
+    background-image: url("../assets/img/table.png");
+    width: 90px;
+    height: 90px;
+    z-index: 10;
+}
+
+.table-label {
+    color: white;
+    font-size: 22px;
+    left: 38px;
+    top: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.robot-waiter {
+    background-image: url("../assets/img/bot.png");
+    width: 30px;
+    height: 30px;
+    z-index: 11;
+}
+
+.colour-yellow {
+    filter: sepia(1) saturate(180%) hue-rotate(20deg);
+}
+
+.colour-pink {
+    filter: sepia(1) saturate(180%) hue-rotate(240deg);
+}
+
+.colour-blue {
+    filter: sepia(1) saturate(180%) hue-rotate(160deg);
+}
+
+.colour-green {
+    filter: sepia(1) saturate(180%) hue-rotate(80deg);
+}
+
+.portal {
+    background-image: url("../assets/img/portal.gif");
+    width: 30px;
+    height: 30px;
+    z-index: 11;
+}
+
+.clock {
+    background-image: url("../assets/img/clock.webp");
+    width: 15px;
+    height: 15px;
+    top: -8px;
+    left: 20px;
+}
+
+.agent-label {
+    left: 0px;
+    top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 8pt;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.kitchen-stove {
+    background-image: url("../assets/img/stove.png");
+    width: 90px;
+    height: 90px;
+    z-index: 10;
+}
+
+.kitchen-stove-label {
+    color: white;
+    font-size: 12px;
+    left: 0px;
+    top: -30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.kitchen-sink {
+    background-image: url("../assets/img/sink.png");
+    width: 105px;
+    height: 90px;
+    z-index: 10;
+}
+
+.sink-bubbles {
+    background-image: url("../assets/img/sink-bubbles.png")
+}
+
+.kitchen-sink-label {
+    color: white;
+    font-size: 12px;
+    left: 0px;
+    top: -30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.kitchen-benchtop {
+    background-image: url("../assets/img/benchtop.png");
+    width: 100px;
+    height: 40px;
+    z-index: 10;
+}
+
+.kitchen-benchtop-label {
+    color: white;
+    font-size: 12px;
+    left: 0px;
+    top: -30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.kitchen-serving-table {
+    background-image: url("../assets/img/benchtop.png");
+    width: 150px;
+    height: 30px;
+    z-index: 10;
+}
+
+.kitchen-serving-table-label {
+    color: white;
+    font-size: 12px;
+    left: 0px;
+    top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.kitchen-refrigerating-room {
+    background-color:lightgray;
+    background-image: url("../assets/img/snowflake.png");
+    background-size: 50%;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+}
+
+.kitchen-refrigerating-room-label {
+    color: white;
+    font-size: 12px;
+    left: 0px;
+    top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.pan {
+    background-image: url("../assets/img/pan.png");
+    width: 35px;
+    height: 35px;
+    z-index: 12;
+}
+
+.steak {
+    background-image: url("../assets/img/steak.png");
+    width: 20px;
+    height: 20px;
+    z-index: 13;
+}
+
+.vegetables {
+    background-image: url("../assets/img/vegetables.png");
+    width: 20px;
+    height: 20px;
+    z-index: 13;
+}
+
+.mashed-potatoes {
+    background-image: url("../assets/img/mashed-potatoes.png");
+    width: 20px;
+    height: 20px;
+    z-index: 13;
+}
+
+.plate {
+    background-image: url("../assets/img/plate.png");
+    width: 35px;
+    height: 35px;
+    z-index: 13;
+}
+
+.meal {
+    background-image: url("../assets/img/plate-meal.png");
+}
+
+.dirty {
+    background-image: url("../assets/img/plate-dirty.png");
+}
+
+.plate-label {
+    left: 13px;
+    top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: black;
+    background-color: white;
+    z-index: 15;
+}

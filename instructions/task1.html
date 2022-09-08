@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/instructions.css">
+    <title>Task 1 Instructions</title>
+</head>
+<body>
+    <h1>Instructions</h1>
+    <p>This is an ECMAScript (JavaScript) programming assignment. Particularly, this task will assess your skills to:
+    <ul>
+        <li>Identify patterns in strings;</li>
+        <li>Correctly use string and NLP functions to extract information from strings;</li>
+        <li>Correctly use JavaScript object structures.</li>
+    </ul>
+    </p>
+    <p>
+        Your task is to write code for the robot working at the reception's desk (the Roboceptionist).<br/>
+        This robot will receive booking enquiries from people and it will have to extract three pieces of information from them:
+        <ol>
+            <li>The name of the person making the booking;</li>
+            <li>The time of the booking;</li>
+            <li>The number of people for the booked table.</li>
+        </ol>
+        A booking enquiry may contain one, two or all three of these pieces of information. For example:
+        <ul>
+            <li>&ldquo;Hi! I made a reservation for four at 6:00pm under the name Joe Doe&rdquo; includes the booking name (Joe Doe), the time (6:00pm) and the number of people (four).</li>
+            <li>&ldquo;Hello, I have a booking for six at 6:30pm&rdquo; only includes the time (6:30pm) and the number of people (six).</li>
+        </ul>
+    </p>
+    <h2>How to complete the task</h2>
+    <p>
+        To complete this task, you must write the code for your solution in the function <code-function>parseBookingEnquiry</code-function> that you can find in the file <a href="../solution/task1.js" target="_blank"><file-ref>solution/task1.js</file-ref></a>.<br />
+        This function has an input argument: <code-argument>bookingEnquiry</code-argument>. This argument stores the string with the booking enquiry that you must parse to extract the necessary information (i.e. person's name, time and number of people). <br />
+        This function must return an <a href="https://www.w3schools.com/js/js_object_definition.asp" target="_blank">object literal</a> with the following properties:
+        <ul>
+            <li><code-variable>bookingName</code-variable>, this property stores the name of the person that made the booking (as a string) or the value <code-argument>null</code-argument> if the booking name is not provided in the reservation;</li>
+            <li><code-variable>bookingTime</code-variable>, this property stores the booking time (as a string) or the value <code-argument>null</code-argument> if the booking time is not provided in the reservation;</li>
+            <li><code-variable>bookingNumber</code-variable>, this property stores the number of people for the booking (as a string) or the value <code-argument>null</code-argument> if this information is not provided in the reservation.</li>
+        </ul>
+        If you need to use additional global variables or functions you can do so by writing the code in the file <file-ref>solution/task1.js</file-ref> outside of the function <code-function>parseBookingEnquiry</code-function>.<br />
+        Below is a list of links to JavaScript files with sample code (and instructions) that you can copy and paste in the <code-function>parseBookingEnquiry</code-function> function to learn how to use nlp-compromise or string functions.
+        <h4>Sample code</h4>
+        <ul>
+            <li>Using nlp-compromise to parse the enquiry (recommended): <a href="task1-examples/use-nlp-compromise.js" target="_blank">sample code</a></li>
+            <li>Using regex and string functions to parse the string: <a href="task1-examples/string-functions.js" target="_blank">sample code</a></li>
+        </ul>
+    </p>
+    <h2>How to test your solution</h2>
+    <p>
+        To test your solution, after you write code in the function <code-function>parseBookingEnquiry</code-function> in the file <file-ref>solution/task1.js</file-ref>, save the file, open the file <file-ref><a href="../index.html" target="_target">index.html</a></file-ref>, and click the button <text-button>Run simulation</text-button> in the Control panel.<br />
+        This will invoke the function <code-function>parseBookingEnquiry</code-function> 100 times. Each iteration will call the function with a different random booking enquiry.<br />
+        In the right Log panel you will be able to see the results of your parsing process. Incorrectly parsed enquiries will generate an error message marked in red.<br />
+        At the end of the simulation, the left Control panel will display your current success rate.
+    </p>
+    <h2>Logging</h2>
+    <p>
+        If you want to log messages you can use the JavaScript <code-variable>console</code-variable><code-punctuation>.</code-punctuation><code-function>log</code-function> method to log messages in the browser's debug console or you can use the global function <code-function>log</code-function> provided for you to log your text message in the right Log console panel of the game interface. <br />
+        For example, if you want to log the string <code-string>'Hello world'</code-string> in the Log panel with the global function <code-function>log</code-function> you can write in your code:<br />
+        <code-function>log</code-function><code-parentheses>(</code-parentheses><code-string>'Hello world'</code-string><code-parentheses>)</code-parentheses><br />
+        If you want to log the string <code-string>'Hello world'</code-string> in the browser's debug console instead, you can write in your code:<br />
+        <code-variable>console</code-variable><code-punctuation>.</code-punctuation><code-function>log</code-function><code-parentheses>(</code-parentheses><code-string>'Hello world'</code-string><code-parentheses>)</code-parentheses>
+    </p>
+    <h2>Hints</h2>
+    <p>
+        This assignment already includes references to use the library nlp-compromise taught during this unit.
+        Using the functions offered by this library may be the more efficient way to extract the desired information from the booking enquiries (with less than ten lines of code!). <br />
+        If you want to use nlp-compromise, try to look into the function <code-function>match</code-function> (documentation <a href="https://observablehq.com/@spencermountain/compromise-match-syntax" target="_blank">here</a>) and look at how to use the default tags offered by nlp-compromise (you can find a list of the tags <a href="https://compromise.cool/" target="_blank">here</a>, by scrolling down the page).<br />
+        Alternatively, you may use the provided <a href="https://www.w3schools.com/js/js_string_methods.asp" target="_blank">JavaScript string methods</a> and regular expressions.
+    </p>
+    <h2>Marking criteria:</h2>
+    <table>
+        <tr>
+            <td>Category</td>
+            <td>Weighting</td>
+            <td colspan="2">Result</td>
+        </tr>
+        <tr>
+            <td>Parsing success rate</td>
+            <td>2.75 marks</td>
+            <td colspan="2">The final mark for this category is computed using the following formula:<br /> <b>2.75 * (success rate / 100)</b></td>
+        </tr>
+        <tr>
+            <td>Quality of the code</td>
+            <td>0.5 marks</td>
+            <td><b>0 marks</b>. The success rate is below 60&percnt; or the code is unnecessarily too long, it uses too many if conditional blocks or it uses string / nlp methods incorrectly.</td>
+            <td><b>0.5 marks</b>. The success rate is above 60&percnt; and the code is short, simple to read, elegant, and it uses string / nlp methods correctly.</td>
+        </tr>
+    </table>
+</body>
+</html>

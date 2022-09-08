@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/main-style.css">
+        <link rel="stylesheet" href="assets/game-tiles.css">
+       
+        <script src="https://unpkg.com/compromise" defer></script>
+        <script src="https://unpkg.com/compromise-numbers"></script>
+        <script type="text/javascript" src="src/classes/graphic-element.js"></script>
+        <script type="text/javascript" src="src/classes/gui-manager.js"></script>
+        <script type="text/javascript" src="src/classes/task2/table.js"></script>
+        <script type="text/javascript" src="src/classes/task2/robot-waiter.js"></script>
+        <script type="text/javascript" src="src/classes/task2/restaurant.js"></script>
+        <script type="text/javascript" src="src/classes/task2/restaurant-controller.js"></script>
+        <script type="text/javascript" src="src/classes/task3/pub-sub-manager.js"></script>
+        <script type="text/javascript" src="src/classes/task3/inventory.js"></script>
+        <script type="text/javascript" src="src/classes/task3/kitchen.js"></script>
+        <script type="text/javascript" src="src/classes/task3/kitchen-station.js"></script>
+        <script type="text/javascript" src="src/classes/task3/robot-chef.js"></script>
+        <script type="text/javascript" src="src/classes/task3/kitchen-controller.js"></script>
+        <script type="text/javascript" src="src/classes/assignment.js"></script>
+        <script type="text/javascript" src="solution/task1.js"></script>
+        <script type="text/javascript" src="solution/task2.js"></script>
+        <script type="text/javascript" src="solution/task3.js"></script>
+        <title>Assignment 4 - ICT100</title>
+    </head>
+    <body onload="assignmentObj.loadIndexContent();">
+        <div id="commands">
+            <div id="task-instructions">
+                <span class="title">Tasks instructions:</span><br />
+                <div id="task-instructions-text">
+                    <a href="instructions/task1.html" target="_blank">Task 1 Instructions</a><br />
+                    <a href="instructions/task2.html" target="_blank">Task 2 Instructions</a><br />
+                    <a href="instructions/task3.html" target="_blank">Task 3 Instructions</a><br />
+                </div>
+            </div>
+            <div id="tasks-menu-panel">
+                <span class="title">Tasks menu:</span><br />
+                <label id="test-label-task1" class="test-label" style="margin-top: 0px;">Task 1 [3.25 marks]: <a href="index.html?task=task1">Roboceptionist</a></label><br />
+                <label id="test-label-task2" class="test-label">Task 2 [3.25 marks]: <a href="index.html?task=task2">Robot waiters</a></label><br />
+                <label id="test-label-task3" class="test-label">Task 3 [3.5 marks]: <a href="index.html?task=task3">Robot chef</a></label><br />
+            </div>
+            <div id="score-panel">
+                <span class="title">Control panel:</span><br />
+                <button id="button-simulation" class="button-command">Run simulation</button>
+                <div id="score-scenario">No score available</div>
+                <div id="score-current" style="margin-top:7px;"></div>
+                <div id="score-normalised"></div>
+            </div>
+        </div>
+        <div id="main-canvas">
+            <div id="task-title-panel"></div>
+        </div>
+        <div id="log-panel">
+            <span class="title">Logs</span><br />
+            <div id="logs"></div>
+        </div>
+    </body>
+</html>

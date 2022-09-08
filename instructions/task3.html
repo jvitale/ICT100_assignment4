@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/instructions.css">
+    <title>Task 3 Instructions</title>
+</head>
+<body>
+    <h1>Instructions</h1>
+    <p>This is an ECMAScript (JavaScript) programming assignment. Particularly, this task will assess your skills to:
+    <ul>
+        <li>Write event-driven and non-sequential code;</li>
+        <li>Correctly use async JavaScript functions;</li>
+        <li>Use callback functions.</li>
+    </ul>
+    </p>
+    <p>
+        Your task is to write code to let the robot chef preparing all the six orders correctly.<br/>
+        The robot chef must:
+        <ol>
+            <li>Take the food from the refrigerating room;</li>
+            <li>Place the food on the stove and cook it until ready for plating;</li>
+            <li>Plate it on the benchtop table;</li>
+            <li>Serve it on the serving window.</li>
+        </ol>
+        The number of plates available in the kitchen is limited to three, one of which is dirty at the start of the game. You will need to clean the dirty plates at the sink when you are out of clean ones to plate new meals.<br />
+        In addition, the robot chef can only handle a maximum of five items in its inventory. Therefore, you must organise the actions to handle the time and the limited resources in a smart way.
+    </p>
+    <h3>Orders' cooking temperatures and times</h3>
+    <p>
+        Each order is a combination of a <b>steak</b> and a <b>side</b>. The steak can be cooked to reach a specific temperature to obtain the desired cooking level required by the order:
+        <ul>
+            <li><b>uncooked.</b> The steak temperature is <b>below 52 degrees</b>. This steak cannot be served;</li>
+            <li><b>rare.</b> The steak temperature is <b>between 52 and 56 degrees</b>;</li>
+            <li><b>medium rare.</b> The steak temperature is <b>between 57 and 61 degrees</b>;</li>
+            <li><b>medium.</b> The steak temperature is <b>between 62 and 66 degrees</b>;</li>
+            <li><b>medium well.</b> The steak temperature is <b>between 67 and 71 degrees</b>;</li>
+            <li><b>well done.</b> The steak temperature is <b>between 72 and 76 degrees</b>;</li>
+            <li><b>overcooked.</b> The steak temperature is <b>above 76 degrees</b>. This steak cannot be served;</li>
+        </ul>
+        The side can be <b>vegetables</b> or <b>mashed-potatoes</b>. Each side must be cooked for a certain amount of 'game ticks' to reach the perfect cooking level:
+        <ul>
+            <li>The required cooking time for <b>vegetables</b> is <b>between 8 and 12 'game ticks'</b></li>
+            <li>The required cooking time for <b>mashed-potatoes</b> is <b>between 10 and 15 'game ticks'</b></li>
+        </ul>
+    </p>
+    <h3>Temperature and time sensors</h3>
+    <p>
+        The stove in the kitchen is a smart stove using a temperature sensor and a time sensor (clock) for each of the four stove's fires.<br />
+        Whenever food is placed on a stove fire, the corresponding temperature and time sensors will update their values according to the current temperature reached by the food on that stove fire and the time the food has been cooking.<br />
+        The values for these sensors are <b>published on two topics</b> every time there is a change in the sensors' values. The topics are:
+        <ul>
+            <li><code-string>'temperature_sensor'</code-string>; and</li>
+            <li><code-string>'stove_clock'</code-string>;</li>
+        </ul>
+        The messages published on these topics are object literals with the following structure:<br />
+        {'stove-1': ..., 'stove-2': ..., 'stove-3': ..., 'stove-4': ...}<br />
+        For example, if on the first stove fire the food reached 30 degrees, the temperature of the food on the fourth stove reach 40 degrees, and there is no food on the rest of the stove fires, the message published on the topic <code-string>'temperature_sensor'</code-string> would be: <b>{'stove-1': 30, 'stove-2': null, 'stove-3': null, 'stove-4': 40}</b><br />
+        And if the food on the first stove fire has been cooking for 4 game ticks and the one on the fourth stove fire has been cooking for 6 game ticks, whereas there is still no food on the other stove fires, the message published on the topic <code-string>'stove_clock'</code-string> would be:
+        <b>{'stove-1': 4, 'stove-2': null, 'stove-3': null, 'stove-4': 6}</b>
+    </p>
+    <h3>Weight sensor</h3>
+    <p>
+        The smart kitchen also has a weight sensor on the returning window to check if there are returned dirty plates and how many are there on the returning window.<br />
+        The weight sensor publishes a message on the topic <code-string>'weight_sensor'</code-string> every time the number of plates on the returning window changes. The message published on this topic is an object literal with the following structure:<br />
+        {'plates-number': ...}<br />
+        For example, if one plate is returned on the returning window, the message published on the topic <code-string>'weight_sensor'</code-string> would be: <b>{'plates-number': 1}</b><br />
+        If the plate is collected by the robot chef and there are no more plates on the returning window, the next message published on the topic <code-string>'weight_sensor'</code-string> would be: <b>{'plates-number': 0}</b>
+    </p>
+    <h2>How to complete the task</h2>
+    <p>
+        To complete this task, you must write the code for your solution in the function <code-function>robotChef</code-function> that you can find in the file <a href="../solution/task3.js" target="_blank"><file-ref>solution/task3.js</file-ref></a>.<br />
+        This function has no arguments.<br />
+        This function must retrieve the list of the orders to cook (see the sample code in the list below) and use the methods available from the global variable <code-variable>kitchenController</code-variable> to control the chef and serve the orders correctly.<br />
+        If you need, you can write additional code outside the function <code-function>robotChef</code-function> (for example for global variables or functions). However, you must write this code in the file <file-ref>solution/task3.js</file-ref>.
+    </p>
+    <h3>How to control the robot chef (game methods)</h3>
+    To write the code for your solution you can use any available JavaScript function. <br />
+    However, to control the robot chef (and access some information about the current state of the game) you will need to use methods accessible from the global variable <code-variable>kitchenController</code-variable>. The methods can be accessed with dot notation.<br />
+    Below is a list of links to JavaScript files with sample code (and instructions) that you can copy and paste in the <code-function>robotChef</code-function> function to understand how the different methods work.
+    <h4>Accessing the orders</h4>
+    <ul>
+        <li>Retrieving the orders list and printing them on the log consoles: <a href="task3-examples/retrieve-orders.js" target="_blank">sample code</a></li>
+    </ul>
+    <h4>Interacting with the kitchen and the sensors</h4>
+    <ul>
+        <li>Collecting food from the refrigerating room and throw away food: <a href="task3-examples/collect-food-refrigerating-room.js" target="_blank">sample code</a></li>
+        <li>Subscribing to the temperature and clock sensors and cook food: <a href="task3-examples/temperature-sensors.js" target="_blank">sample code</a></li>
+        <li>Subscribing to the weight sensor and wash dirty plates: <a href="task3-examples/weight-sensor.js" target="_blank">sample code</a></li>
+        <li>Unsubscribing from topics and waiting on a condition: <a href="task3-examples/waiting-condition.js" target="_blank">sample code</a></li>
+        <li>Prepare and serve a meal: <a href="task3-examples/prepare-meal.js" target="_blank">sample code</a></li>
+    </ul>
+    <h2>How to test your solution</h2>
+    <p>
+        To test your solution, after you write code in the function <code-function>robotChef</code-function> in the file <file-ref>solution/task3.js</file-ref>, save the file, open the file <file-ref><a href="../index.html" target="_target">index.html</a></file-ref>, click on Task 3 in the Task Menu (on the left), and click the button <text-button>Run simulation</text-button> in the Control panel.<br />
+        This will generate a list of six random orders and invoke the function <code-function>robotChef</code-function>.<br />
+        The simulation will end once the function <code-function>robotChef</code-function> completes.<br />
+        If your code generates errors, the execution of the function <code-function>robotChef</code-function> will terminate and the error will be logged in red in the Log panel.<br />
+        At the end of the simulation, the left Control panel will display your current success rate in preparing the correct meals according to the orders list.
+    </p>
+    <h2>Logging</h2>
+    <p>
+        If you want to log messages you can use the JavaScript <code-variable>console</code-variable><code-punctuation>.</code-punctuation><code-function>log</code-function> method to log messages in the browser's debug console or you can use the global function <code-function>log</code-function> provided for you to log your text message in the right Log console panel of the game interface. <br />
+        For example, if you want to log the string <code-string>'Hello world'</code-string> in the Log panel with the global function <code-function>log</code-function> you can write in your code:<br />
+        <code-function>log</code-function><code-parentheses>(</code-parentheses><code-string>'Hello world'</code-string><code-parentheses>)</code-parentheses><br />
+        If you want to log the string <code-string>'Hello world'</code-string> in the browser's debug console instead, you can write in your code:<br />
+        <code-variable>console</code-variable><code-punctuation>.</code-punctuation><code-function>log</code-function><code-parentheses>(</code-parentheses><code-string>'Hello world'</code-string><code-parentheses>)</code-parentheses>
+    </p>
+    <h2>Hints</h2>
+    <p>
+        Go though all the sample codes listed above before starting this task. Copy and paste each sample code in the function <code-function>robotChef</code-function> and see what happens.<br />
+        Each sample code includes comments to provide an explanation of each set of instructions. Read them carefully. <br />
+        Once you tried out all the sample codes, try to re-use them in your code by adapting them so to complete the task.
+    </p>
+    <h2>Marking criteria:</h2>
+    <table>
+        <tr>
+            <td>Category</td>
+            <td>Weighting</td>
+            <td colspan="2">Result</td>
+        </tr>
+        <tr>
+            <td>Orders successfully served (success rate)</td>
+            <td>3 marks</td>
+            <td colspan="2">The final mark for this category is computed using the following formula:<br /><b>3 * (success rate / 100)</b></td>
+        </tr>
+        <tr>
+            <td>Quality of the code</td>
+            <td>0.5 marks</td>
+            <td><b>0 marks</b>. No order was correctly served or the code does not use the publish / subscribe methods to correctly read and use all sensors' values (temperature, clock and weight sensors).</td>
+            <td><b>0.5 marks</b>. At least one correct order was served and the code makes a correct use of the publish / subscribe methods to correctly read and use all the sensors' values (temperature, clock and weight sensors).</td>
+        </tr>
+    </table>
+</body>
+</html>

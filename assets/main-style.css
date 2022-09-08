@@ -1,0 +1,254 @@
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+  
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main-canvas {
+    width: 640px;
+    height: 480px;
+    background-color: white;
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    overflow: hidden;
+}
+#commands {
+    width: 400px;
+    height: 480px;
+    position: relative;
+    float: left;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.title {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    position: relative;
+    top:-15px;
+    left: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: block;
+}
+
+.button-command {
+    margin-left: 10px;
+    margin-top:10px;
+}
+
+.test-label {
+    display: inline-block;
+    width: 250px;
+    text-align: left;
+}
+
+.test-label.selected {
+    font-weight: bold;
+}
+
+.input-text {
+    width: 300px;
+    margin-top:10px;
+    margin-left: 10px;
+}
+
+.code-function {
+    font-family: monospace;
+    font-weight: bold;
+    color:rgb(7, 99, 192);
+}
+
+.file {
+    font-family: monospace;
+    font-weight: bold;
+    color:chocolate;
+}
+
+#log-panel {
+    width: 360px;
+    height: 480px;
+    background-color: white;
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#logs {
+    width: 360px;
+    height: 450px;
+    overflow: auto;
+}
+
+.log-message {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding:3px;
+}
+
+.log-error {
+    color: red;
+}
+
+.log-score {
+    color:green;
+}
+
+.log-warning {
+    color: orange;
+}
+
+.log-event {
+    color: blue;
+}
+
+#score-panel {
+    width: 350px;
+    height: 170px;
+    background-color: white;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#score-panel div {
+    margin-left: 10px;
+}
+
+#score-scenario {
+    margin-top: 10px;
+}
+
+#tasks-menu-panel {
+    width: 350px;
+    height: 110px;
+    background-color: white;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#tasks-menu-panel div {
+    margin-left: 10px;
+}
+
+#task-instructions {
+    width: 350px;
+    height: 100px;
+    background-color: white;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#task-instructions div {
+    margin-left: 10px;
+}
+
+#task-instructions-text {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-height: 120px;
+    overflow: scroll;
+}
+
+#task-title-panel {
+    width: 250px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#report {
+    width: 550px;
+    height: 550px;
+    background-color:aquamarine;
+    border: 3px solid black;
+    position: absolute;
+    z-index: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    padding: 10px;
+    overflow:auto;
+}
+
+graphic-container {
+    position: absolute;
+    background-color: brown;
+}
+
+element-label {
+    position: absolute;
+    z-index: 12;
+}
+
+element-tile {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+element-status {
+    position: absolute;
+    left: 30px;
+    top: 0px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 20;
+}
